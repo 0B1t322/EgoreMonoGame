@@ -1,2 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/dande/source/repos/Eroge/Eroge/Content/logo.png","C:/Users/dande/source/repos/Eroge/Eroge/Content/bin/DesktopGL/logo.xnb","TextureProcessor","Texture2DContent",2534026,8294485,0,3687135
+"C:/Users/dande/source/repos/Eroge/Eroge/Content/Font.spritefont","C:/Users/dande/source/repos/Eroge/Eroge/Content/bin/DesktopGL/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21521,0,2526498
+"C:/Users/dande/source/repos/Eroge/Eroge/Content/logo.png","C:/Users/dande/source/repos/Eroge/Eroge/Content/bin/DesktopGL/logo.xnb","TextureProcessor","Texture2DContent",2534026,8294485,0,252786
+"C:/Users/dande/source/repos/Eroge/Eroge/Content/Slavya_ms.png","C:/Users/dande/source/repos/Eroge/Eroge/Content/bin/DesktopGL/Slav9.xnb","TextureProcessor","Texture2DContent",119648,1078565,0,0438132
+"C:/Users/dande/source/repos/Eroge/Eroge/Content/StandartFont.spritefont","C:/Users/dande/source/repos/Eroge/Eroge/Content/bin/DesktopGL/StandartFont.xnb","LocalizedFontProcessor","SpriteFontContent",2426,939,0,0180028

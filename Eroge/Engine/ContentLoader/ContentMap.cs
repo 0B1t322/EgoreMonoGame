@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using Eroge.Engine.Drawable;
-using System.Threading.Tasks;
 
 
 namespace Eroge.Engine.ContentLoader
@@ -8,31 +6,43 @@ namespace Eroge.Engine.ContentLoader
     public class ContentMap
     {
         
-        private Dictionary<string, Sprite> content;
+        private Dictionary<string, List<object> > contentMap;
         
 
-        public Dictionary<string, Sprite>  Content { get => content; }
+        public Dictionary<string, List<object> >  Content { get => contentMap; }
 
         public ContentMap()
         {
             
-            content = new Dictionary<string, Sprite>();
+            contentMap = new Dictionary<string, List<object> >();
         }
 
-        public void Add(string contentName, Sprite sprite)
+        public void Add(string contentName, object content)
         {
-            content.Add(contentName, sprite);
+            var Obj = FindContent(contentName);
+            if (Obj == default)
+            {
+                var list = new List<object>();
+                list.Add(content);
+
+                contentMap.Add(contentName, list);
+            }
+            else
+            {
+                Obj.Add(content);
+            }
         }
 
         public void Delete(string contentName)
         {
-            content.Remove(contentName);
+            contentMap.Remove(contentName);
         }
 
-        public Sprite FindContent(string contentName)
+        public List<object> FindContent(string contentName)
         {
-            Sprite sprite = null;
-            if(content.TryGetValue(contentName,out sprite) == false)
+            List<object> content = default;
+            
+            if(contentMap.TryGetValue(contentName,out content) == false)
             {
                 ConsoleLog.ConsoleLog.PrintErrorMessage(contentName + " is not find");
             }
@@ -41,7 +51,7 @@ namespace Eroge.Engine.ContentLoader
                 ConsoleLog.ConsoleLog.PrintMessage(contentName + " is find");
             }
             
-            return sprite;
+            return content;
         }
     }
 }

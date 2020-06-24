@@ -23,3 +23,6 @@ C:\Users\dande\source\repos\Eroge\Eroge\obj\Debug\netcoreapp3.1\Eroge.pdb
 C:\Users\dande\source\repos\Eroge\Eroge\obj\Debug\netcoreapp3.1\Eroge.genruntimeconfig.cache
 C:\Users\dande\source\repos\Eroge\Eroge\bin\Debug\netcoreapp3.1\Content\57ab9564cf1cb156763f91f0.xnb
 C:\Users\dande\source\repos\Eroge\Eroge\bin\Debug\netcoreapp3.1\Content\logo.xnb
+C:\Users\dande\source\repos\Eroge\Eroge\bin\Debug\netcoreapp3.1\Content\Slav9.xnb
+C:\Users\dande\source\repos\Eroge\Eroge\bin\Debug\netcoreapp3.1\Content\StandartFont.xnb
+C:\Users\dande\source\repos\Eroge\Eroge\bin\Debug\netcoreapp3.1\Content\Font.xnb

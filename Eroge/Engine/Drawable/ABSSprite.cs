@@ -14,7 +14,7 @@ namespace Eroge.Engine.Drawable
 
     /// <summary>Abstarct class of the Sprite</summary>
     public abstract class ABSSprite : 
-    IDraw, IContentLoader, IDisposable
+    IContent
     {
         /// <summary>A sprite texture</summary>
         private Texture2D _texture = null; // the main texture

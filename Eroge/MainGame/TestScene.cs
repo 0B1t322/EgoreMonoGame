@@ -5,10 +5,12 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Eroge.Engine.ConsoleLog;
-using Eroge.Engine.ContentLoader;
 
 namespace Eroge.MainGame
 {
+
+    
+
     public class TestScene
     {
         
@@ -18,19 +20,23 @@ namespace Eroge.MainGame
             if(Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 ConsoleLog.PrintMessage("D is pressed");
-                foreach(var dict in contentMap.Content)
+                foreach(IContent dict in contentMap.Content.Values)
                 {
-                    dict.Value.Dispose();
-                    contentMap.Delete("Slav9");
+                    string contentName = "Slav9";
+                    if(dict.ContentName == contentName)
+                    {
+                        dict.Dispose();
+                        this.contentMap.Delete(contentName);
+                    }
                 }
             }
         }
 
         public void _Draw(SpriteBatch spriteBatch)
         {
-            foreach(var sprite in contentMap.Content.Values)
+            foreach(IContent content in contentMap.Content.Values)
             {
-                sprite.Draw(spriteBatch);
+                content.Draw(spriteBatch);
             }
         }
 
@@ -42,17 +48,39 @@ namespace Eroge.MainGame
                 new Sprite
                 {
                     Position = new Vector2(50,0),
-                    ContentName = "Slav9"
+                    ContentName = "Slav9",
+                }
+            );
+            contentMap.Add(
+                "Message",
+                new Text
+                {
+                    Position = new Vector2(100, 0),
+                    ContentName = "Font",
+                    Text = "Hello world"
                 }
             );
         }
 
         public void _LoadContent(ContentManager content)
         {
-            foreach(IContentLoader dict in contentMap.Content.Values)
+            foreach(var dict in contentMap.Content.Values)
             {
-                dict.LoadContent(content);
+                
             }
+        }
+
+
+        private object _GetContent( object obj )
+        {
+            return obj;
         }
     }
 }
+
+
+/*delegate( object obj ) 
+                    {
+                        IContent tmp = obj as IContent;
+                        tmp.LoadContent(content); 
+                    } */

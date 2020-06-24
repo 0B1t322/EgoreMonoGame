@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/Users/dande/source/repos/Eroge/Eroge/Content/logo.png</SourceFile>
+  <SourceFile>C:/Users/dande/source/repos/Eroge/Eroge/Content/logo.png</SourceFile>
   <SourceTime>2020-06-19T17:19:06.147762+03:00</SourceTime>
-  <DestFile>c:/Users/dande/source/repos/Eroge/Eroge/Content/bin/DesktopGL/Content/logo.xnb</DestFile>
-  <DestTime>2020-06-21T16:33:34.5725964+03:00</DestTime>
+  <DestFile>C:/Users/dande/source/repos/Eroge/Eroge/Content/bin/DesktopGL/Content/logo.xnb</DestFile>
+  <DestTime>2020-06-24T16:07:18.4723952+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-05-27T15:15:40+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

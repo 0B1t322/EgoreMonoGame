@@ -4,9 +4,15 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>c:/Users/dande/source/repos/Eroge/Eroge/Content/logo.png</File>
+    <File>C:/Users/dande/source/repos/Eroge/Eroge/Content/Font.spritefont</File>
+    <File>C:/Users/dande/source/repos/Eroge/Eroge/Content/logo.png</File>
+    <File>C:/Users/dande/source/repos/Eroge/Eroge/Content/Slavya_ms.png</File>
+    <File>C:/Users/dande/source/repos/Eroge/Eroge/Content/StandartFont.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>Slav9.png</File>
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
