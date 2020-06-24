@@ -20,23 +20,31 @@ namespace Eroge.MainGame
             if(Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 ConsoleLog.PrintMessage("D is pressed");
-                foreach(IContent dict in contentMap.Content.Values)
+                foreach(var list in contentMap.Content.Values)
                 {
-                    string contentName = "Slav9";
-                    if(dict.ContentName == contentName)
+                    foreach(IContent content in list)
                     {
-                        dict.Dispose();
+                        string contentName = "Slav9";
+                    if(content.ContentName == contentName)
+                    {
+                        content.Dispose();
                         this.contentMap.Delete(contentName);
                     }
+                    }
+                    
+                    
                 }
             }
         }
 
         public void _Draw(SpriteBatch spriteBatch)
         {
-            foreach(IContent content in contentMap.Content.Values)
+            foreach(var list in contentMap.Content.Values)
             {
-                content.Draw(spriteBatch);
+                foreach(IContent content in list)
+                {
+                    content.Draw(spriteBatch);
+                }
             }
         }
 
@@ -62,19 +70,19 @@ namespace Eroge.MainGame
             );
         }
 
-        public void _LoadContent(ContentManager content)
+        public void _LoadContent(ContentManager contentManager)
         {
-            foreach(var dict in contentMap.Content.Values)
+            foreach(var list in contentMap.Content.Values)
             {
-                
+                foreach(IContent content in list)
+                {
+                    content.LoadContent(contentManager);
+                }
             }
         }
 
 
-        private object _GetContent( object obj )
-        {
-            return obj;
-        }
+        
     }
 }
 

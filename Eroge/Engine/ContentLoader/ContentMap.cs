@@ -44,11 +44,11 @@ namespace Eroge.Engine.ContentLoader
             
             if(contentMap.TryGetValue(contentName,out content) == false)
             {
-                ConsoleLog.ConsoleLog.PrintErrorMessage(contentName + " is not find");
+                //ConsoleLog.ConsoleLog.PrintErrorMessage(contentName + " is not find");
             }
             else
             {
-                ConsoleLog.ConsoleLog.PrintMessage(contentName + " is find");
+                //ConsoleLog.ConsoleLog.PrintMessage(contentName + " is find");
             }
             
             return content;
