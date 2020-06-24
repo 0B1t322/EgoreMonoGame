@@ -7,9 +7,9 @@ namespace Eroge.Engine.Drawable
     public class Sprite : ABSSprite
     {
 
-        public Sprite(Texture2D texture)
+        public Sprite(string contentName)
         {
-            this.Texture = texture;
+            this.ContentName = contentName;
         }
         public Sprite(Texture2D texture, Vector2 pos)
         {
@@ -22,15 +22,10 @@ namespace Eroge.Engine.Drawable
             this.Rect = new Rectangle( (int)this.Position.X, (int)this.Position.Y,width, height);
         }
 
-        public void CreateRect()
-        {
-            this.Rect = new Rectangle( (int)this.Position.X, (int)this.Position.Y,Texture.Width, Texture.Height);
-        }
 
         public Sprite()
         {
             
-
         }
         protected override void _Draw(SpriteBatch spriteBatch)
         {
@@ -44,6 +39,12 @@ namespace Eroge.Engine.Drawable
                 SpriteEffects.None // Sprite effects
                 ,0.0f // Layer Depth
                 ); // Draw end
+        }
+
+
+        ~Sprite()
+        {
+            Dispose(false);
         }
     }
 }

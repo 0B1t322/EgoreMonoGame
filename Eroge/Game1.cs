@@ -1,17 +1,23 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Eroge.Engine.Drawable;
+using Eroge.MainGame;
 
 namespace Eroge
 {
     public class Game1 : Game
     {
+        private Sprite some_texture;
         private GraphicsDeviceManager _graphics;
+
+        private TestScene testScene = new TestScene();
         private SpriteBatch _spriteBatch;
 
-        private Vector2 position;
-        
-        private Texture2D texture;
+
+        //private Texture2D _texture;
+
+        //private Vector2 position;
 
         public Game1()
         {
@@ -23,6 +29,7 @@ namespace Eroge
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            testScene._Initialize();
             
             base.Initialize();
         }
@@ -31,9 +38,14 @@ namespace Eroge
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            texture = this.Content.Load<Texture2D>("logo");
+            testScene._LoadContent(this.Content);
 
             // TODO: use this.Content to load your game content here
+        }
+
+        protected override void UnloadContent()
+        {
+            // some unload content
         }
 
         protected override void Update(GameTime gameTime)
@@ -41,6 +53,8 @@ namespace Eroge
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+
+            testScene._Update();
             
             // TODO: Add your update logic here
 
@@ -53,15 +67,7 @@ namespace Eroge
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(
-                texture: texture,
-                new Rectangle(
-                    new Point(0,0),
-                    new Point(Window.ClientBounds.Width, Window.ClientBounds.Height)
-                    ),
-                null,
-                Color.White
-                );
+            testScene._Draw(_spriteBatch);
             _spriteBatch.End();
             
             base.Draw(gameTime);
